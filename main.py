@@ -108,7 +108,7 @@ def logged_in_function():
                            username13=username13,score13=score13,username14=username14,score14=score14,username15=username15,score15=score15,
                            username16=username16,score16=score16,username17=username17,score17=score17)
     else:
-        return render_template('Logged_in.html',username1=username1,score1=score1,username2=username2,score2=score2,username3=username3,score3=score3,
+        return render_template('Logged_in.html',username = username,username1=username1,score1=score1,username2=username2,score2=score2,username3=username3,score3=score3,
                            username4=username4,score4=score4,username5=username5,score5=score5,username6=username6,score6=score6,
                            username7=username7,score7=score7,username8=username8,score8=score8,username9=username9,score9=score9,
                            username10=username10,score10=score10,username11=username11,score11=score11,username12=username12,score12=score12,

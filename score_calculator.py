@@ -11,13 +11,24 @@ def calculate_final_score(path: str = "auth.json"):
         if dict['total_time']!="":
             quiz_score = dict['score'] * 5
             time = int(float(dict['total_time'].replace(":", ".")))
-            time_score = (29 - time) * 3
+            time_score = (44 - time) * 3
             final_score = quiz_score + time_score
             dict['final_score'] = final_score
         else:
             dict['final_score'] = 0
     with open(path, 'w+') as f:
         f.write(json.dumps(credentials, indent=4))
+
+def check_if_all_submitted(submision_time_name):
+    credentials = read_credentials()
+    k=0
+    for dict in credentials:
+        if dict[submision_time_name]=='':
+            k+=1
+    if k==0:
+        return True
+    else:
+        return False
 
 def read_ranking():
     ranking_dict = {}
@@ -36,4 +47,5 @@ if __name__ == '__main__':
     calculate_final_score()
     print(read_ranking()[0][0])
     print(read_ranking()[0][1])
+    print(check_if_all_submitted('submission_time'))
 
