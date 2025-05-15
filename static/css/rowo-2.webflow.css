@@ -1821,7 +1821,14 @@ blockquote {
   font-size: 1.2rem;
 }
 
-.radio-button-label-2.correct {
+.radio-button-label-20 {
+  color: #FF0000;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+
+.radio-button-label-20.correct {
   color: #93d36a;
 }
 
