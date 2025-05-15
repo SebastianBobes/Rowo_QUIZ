@@ -30,6 +30,20 @@ def check_if_all_submitted(submision_time_name):
     else:
         return False
 
+def read_quiz_score(username,path = 'auth.json'):
+    credentials = read_credentials(path)
+    for dict in credentials:
+        if dict['user'] ==username:
+            score = dict['score']
+            return score
+def read_quiz_time(username,path = 'auth.json'):
+    credentials = read_credentials(path)
+    for dict in credentials:
+        if dict['user'] ==username:
+            time = dict['total_time']
+            return time
+
+
 def read_ranking():
     ranking_dict = {}
     credentials = read_credentials()

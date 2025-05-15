@@ -118,6 +118,10 @@ def logged_in_function():
 @app.route("/quiz")
 def second_function():
     username = session.get('username')
+    if score_calculator.check_if_all_submitted("submission_time"):
+        score = score_calculator.read_quiz_score(username)
+        time = score_calculator.read_quiz_time(username)
+        return render_template('QUIZ_raspunsuri.html', username=username,score=score,time=time)
     if auth.check_starting_time(username) == False:
         return render_template('Logged_in.html', username=username)
     else:
